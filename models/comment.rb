@@ -14,4 +14,12 @@ class Comments < Sequel::Model
     end
     create_table
   end
+
+  def date
+    self.posted_date.strftime("%Y-%m-%d %H:%M:%S") if self.posted_date != nil
+  end
+
+  def formatted_message
+    Rack::Utils.escape_html(self.message).gsub(/\n/, "<br>")
+  end
 end

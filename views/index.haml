@@ -23,7 +23,7 @@
     %h2= h comment.title
     .info
       %span.name== by #{h comment.name}
-      %span.date== (#{h comment.posted_date})
+      %span.date== (#{h comment.date})
 
     .message
-      = comment.message
+      = comment.formatted_message
