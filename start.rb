@@ -8,7 +8,7 @@ end
 
 get "/style.css" do
   content_type "text/css", :charset => "utf-8"
-  sass :style
+  scss :style
 end
 
 get "/" do
@@ -18,9 +18,9 @@ end
 
 put "/comment" do
   Comments.create({
-    :name => request[:name],
-    :title => request[:title],
-    :message => request[:message],
+    :name        => request[:name],
+    :title       => request[:title],
+    :message     => request[:message],
     :posted_date => request[:posted_date]
   })
   redirect "/"
